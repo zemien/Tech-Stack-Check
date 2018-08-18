@@ -6,9 +6,17 @@ namespace TechStackCheck.Web.Hubs
 {
     public class NotificationHub : Hub
     {
-        public async Task SendMessage(string user, string message)
+        /// <summary>
+        /// Pings the server time.
+        /// </summary>
+        /// <returns>The server time.</returns>
+        /// <param name="request">Hubs can receive any number of string parameters</param>
+        public async Task PingServerTime(string request)
         {
-            await Clients.All.SendAsync("ReceiveMessage", user, message);
+            if (request.Equals("serverTime", StringComparison.InvariantCultureIgnoreCase))
+            {
+                await Clients.All.SendAsync("serverTime", DateTime.Now.ToShortTimeString());
+            }
         }
     }
 }
