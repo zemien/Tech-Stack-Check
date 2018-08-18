@@ -9,8 +9,10 @@ var getViewmodel = function (model) {
         initialize: function() {
             //TODO Any control initialization steps
 
-            model.getApiValue(2).then(function(response){
             var animationElement = document.querySelector('#animation-element');
+            window.fitText(document.querySelector('.responsive-headline'));
+
+            model.getApiValue(2).then(function(response) {
                 //This shows how placeholder.js is used
                 var template = "I called the api and it returned: {{apiValue}}";
                 var renderedText = placeholders(template, response);

@@ -10,6 +10,7 @@
     "inputFiles": [
       "wwwroot/js/animate.js",
       "wwwroot/js/placeholders.js",
+      "wwwroot/js/fittext.js",
       "wwwroot/js/app.model.js",
       "wwwroot/js/app.viewmodel.js"
     ],

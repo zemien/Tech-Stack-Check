@@ -26,6 +26,7 @@ A sample project demonstrating various techniques and tech stack that will be us
   * [Atomic.js](https://cferdinandi.github.io/atomic/) - a lightweight AJAX-with-promises library
   * [Placeholders.js](https://vanillajstoolkit.com/helpers/placeholders/) - a lightweight string-templating alternative to Moustache
   * [Animate.js](https://vanillajstoolkit.com/helpers/animate/) - a lightweight helper to trigger Animate.css animations
+  * [Fittext.js](https://github.com/adactio/FitText.js) - easily make headlines fill up the width of its container, responsively. This is a port with no JQuery dependency.
  * [Jasmine](https://jasmine.github.io/) - JavaScript unit tests
  * [Chutzpah](http://mmanela.github.io/chutzpah/) - Unit test runner
   
