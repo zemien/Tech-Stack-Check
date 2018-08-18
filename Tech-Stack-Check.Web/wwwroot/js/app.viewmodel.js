@@ -10,6 +10,7 @@ var getViewmodel = function (model) {
             //TODO Any control initialization steps
 
             model.getApiValue(2).then(function(response){
+            var animationElement = document.querySelector('#animation-element');
                 //This shows how placeholder.js is used
                 var template = "I called the api and it returned: {{apiValue}}";
                 var renderedText = placeholders(template, response);
@@ -20,7 +21,6 @@ var getViewmodel = function (model) {
                 }
             });
 
-            var animationElement = document.querySelector('#animationElement');
 
             //All click event handlers come here
             document.addEventListener('click', function (event) {
