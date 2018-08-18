@@ -22,7 +22,8 @@ A sample project demonstrating various techniques and tech stack that will be us
   * [Animate.css](https://daneden.github.io/animate.css/) - a lightweight CSS animation system
   * [Bootstrap 4](https://getbootstrap.com/docs/4.0/layout/grid/) - mainly for grid layout system
 * JavaScript libraries included:
-  * jQuery 3 - mainly for familiarity's sake. I would recommend vanilla JS where possible.
+  * jQuery 3 Slim - mainly for Bootstrap 4 support. No AJAX or Effects - use a vanilla JS alternative below.
+  * [Atomic.js](https://cferdinandi.github.io/atomic/) - a lightweight AJAX-with-promises library
   * [Placeholders.js](https://vanillajstoolkit.com/helpers/placeholders/) - a lightweight string-templating alternative to Moustache
   * [Animate.js](https://vanillajstoolkit.com/helpers/animate/) - a lightweight helper to trigger Animate.css animations
  * [Jasmine](https://jasmine.github.io/) - JavaScript unit tests

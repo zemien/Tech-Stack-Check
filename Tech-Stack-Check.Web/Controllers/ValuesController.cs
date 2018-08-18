@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Tech_Stack_Check.Web.Controllers
+namespace TechStackCheck.Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

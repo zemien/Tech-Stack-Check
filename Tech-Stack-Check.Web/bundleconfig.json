@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/app.min.js",
+    "inputFiles": [
+      "wwwroot/js/animate.js",
+      "wwwroot/js/placeholders.js",
+      "wwwroot/js/app.model.js",
+      "wwwroot/js/app.viewmodel.js"
+    ],
+    "sourceMap": true
+  }
+]

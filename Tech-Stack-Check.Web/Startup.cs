@@ -10,8 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TechStackCheck.Web.Hubs;
 
-namespace Tech_Stack_Check.Web
+namespace TechStackCheck.Web
 {
     public class Startup
     {
@@ -26,6 +27,8 @@ namespace Tech_Stack_Check.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +45,11 @@ namespace Tech_Stack_Check.Web
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseStaticFiles();
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<NotificationHub>("/notificationHub");
+            });
         }
     }
 }

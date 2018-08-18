@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Tech_Stack_Check.Web
+namespace TechStackCheck.Web
 {
     public class Program
     {

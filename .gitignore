@@ -3,6 +3,11 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Minified and map files (these should be built by CI/CD)
+*.min.js
+*.min.css
+*.map
+
 # User-specific files
 *.suo
 *.user
