@@ -13,7 +13,7 @@
     let model = getModel(atomic);
     it("mocking the API", () => {
         //Use the model during the unit test
-        let actual = model.getApiValuePromise(6);
+        let actual = model.getApiValue(6);
         expect(actual.apiValue).toBe(5);
     });
 });

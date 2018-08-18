@@ -5,7 +5,7 @@
  
 var getModel = function (atomic) {
     return {
-        getApiValuePromise: function(id){
+        getApiValue: function(id){
             return atomic("/api/values/" + id).then(function(response){
                 //TODO: Any modification necessary for the viewmodel
                 console.log(response.data);
