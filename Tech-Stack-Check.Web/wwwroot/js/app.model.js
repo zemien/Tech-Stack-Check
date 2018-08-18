@@ -15,6 +15,10 @@ var getModel = function (atomic) {
             }, function(error){
                 console.log(error);
             });
+        },
+        //Jasmine unit test demo method only
+        add: function (a, b) {
+            return a + b;
         }
     };
 };

@@ -1,0 +1,15 @@
+﻿{
+  "Framework": "jasmine",
+  "FrameworkVersion": "2.0",
+  "References": [
+    {
+      "Path": "../",  
+      "Includes": [ "*.js" ] //Includes all .js files in the js folder
+    }
+  ],
+  "Tests": [
+    {
+      "Includes": [ "*test.js" ] //Includes all .test.js files in the js/tests folder
+    }
+  ]
+}
