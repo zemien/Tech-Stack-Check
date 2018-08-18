@@ -11,7 +11,4 @@
   <ItemGroup>
     <Folder Include="Hubs\" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Remove="wwwroot\js\app.min.js" />
-  </ItemGroup>
 </Project>
