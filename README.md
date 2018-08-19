@@ -47,13 +47,13 @@ A sample project demonstrating various techniques and tech stack that will be us
  ## Instructions
  1. Clone this repository
  2. (Optional for testing Azure Storage connection) Emulate Azure Storage:
-   1. Start emulation software with default settings
-   2. Connect to it using Azure Storage Explorer to confirm emulation is running
-   3. Add a new Table called 'Value'.
-   4. Add a new row to Value table. Ensure the PartitionKey can be parsed as a valid integer.
-   5. Modify appsettings.Development.json:
-     * Set UseFakeTableStorage to false.
-     * Update Table_StorageAccountConnectionString if necessary (it is using default Azure Storage Emulator path).
+     1. Start emulation software with default settings
+     2. Connect to it using Azure Storage Explorer to confirm emulation is running
+     3. Add a new Table called 'Value'.
+     4. Add a new row to Value table. Ensure the PartitionKey can be parsed as a valid integer.
+     5. Modify appsettings.Development.json:
+         * Set UseFakeTableStorage to false.
+         * Update Table_StorageAccountConnectionString if necessary (it is using default Azure Storage Emulator path).
  3. Open a command prompt in the repository folder with the .sln file
  4. Run `dotnet build` to restore NuGet packages and build the solution.
  5. Run `dotnet test ./Tech-Stack-Check.Web.Tests/` and verify all tests pass.
