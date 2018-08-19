@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using TechStackCheck.AzureStorage.Table;
 using TechStackCheck.Web.Hubs;
+using TechStackCheck.Web.Models;
+using TechStackCheck.Web.Services;
 
 namespace TechStackCheck.Web
 {
@@ -26,6 +22,23 @@ namespace TechStackCheck.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IAzureTableStorage<Value>>(factory =>
+            {
+                return new AzureTableStorage<Value>(
+                    new AzureTableSettings(Configuration["Table_StorageAccountConnectionString"]));
+            });
+
+            //Decide between using a fake table storage or Azure Table Storage
+            if (bool.TryParse(Configuration["UseFakeTableStorage"], out var useFakeTableStorage) &&
+                useFakeTableStorage == true)
+            {
+                services.AddScoped<IValuesService, FakeValuesService>();
+            }
+            else
+            {
+                services.AddScoped<IValuesService, TableStorageValuesService>();
+            }
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSignalR();

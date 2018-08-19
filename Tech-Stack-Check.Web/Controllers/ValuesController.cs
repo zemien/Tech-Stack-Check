@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TechStackCheck.Web.Services;
 
 namespace TechStackCheck.Web.Controllers
 {
@@ -10,6 +11,12 @@ namespace TechStackCheck.Web.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly IValuesService valuesService;
+
+        public ValuesController(IValuesService valuesService){
+            this.valuesService = valuesService;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -19,9 +26,9 @@ namespace TechStackCheck.Web.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            return Ok(await valuesService.GetValue(id));
         }
 
         // POST api/values

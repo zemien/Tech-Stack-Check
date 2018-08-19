@@ -40,10 +40,23 @@ A sample project demonstrating various techniques and tech stack that will be us
   * Table storage for application records (NoSQL tables)
   * Table storage for configuration settings
   * Blob storage for images
+* For Azure Storage emulation use either:
+  * [Azure Storage Emulator](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator) on Windows - comes installed with Azure SDK
+  * [Azurite](https://github.com/azure/azurite) on Windows, Mac OS, and Linux
   
  ## Instructions
  1. Clone this repository
- 2. Start Azure Table Storage emulation
+ 2. (Optional for testing back-end) Emulate Azure Storage:
+   1. Start emulation software with default settings
+   2. Connect to it using Azure Storage Explorer to confirm emulation is running
+   3. Add a new Table called 'Value'.
+   4. Add a new row to Value table. Ensure the PartitionKey can be parsed as a valid integer.
+   5. Modify appsettings.Development.json:
+     * Set UseFakeTableStorage to false.
+     * Update Table_StorageAccountConnectionString if necessary (it is using default Azure Storage Emulator path).
  3. Open a command prompt in the repository folder with the .sln file
  4. Run `dotnet build`
- 5. `TODO steps to confirm test functionality is working`
+ 5. Run `dotnet test`
+ 6. Run `dotnet run --project ./tech-stack-check.web/`
+ 7. Browse to website (usually [http://localhost:5000](http://localhost:5000)) and test functionality.
+ 8. `Ctrl-C` to exit the Kestrel server in the command prompt.
