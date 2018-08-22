@@ -34,6 +34,7 @@ A sample project demonstrating various techniques and tech stack that will be us
 * ASP .Net Core Web API
 * xUnit - unit test framework
 * Moq - mocking framework
+* AutoMapper - data mapping framework
 
 ### Back-end/Data layer
 * Azure Storage
