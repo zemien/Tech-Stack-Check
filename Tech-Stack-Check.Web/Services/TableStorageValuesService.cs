@@ -19,5 +19,10 @@ namespace TechStackCheck.Web.Services
             var allValues = await repository.GetList();
             return int.Parse(allValues.First().PartitionKey);
         }
+
+        public async Task<Value[]> GetValues()
+        {
+            return (await repository.GetList()).ToArray();
+        }
     }
 }

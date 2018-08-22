@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -42,10 +43,13 @@ namespace TechStackCheck.Web
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSignalR();
+
+            //Configure AutoMapper profiles
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IMapper autoMapper)
         {
             if (env.IsDevelopment())
             {
@@ -63,6 +67,8 @@ namespace TechStackCheck.Web
             {
                 routes.MapHub<NotificationHub>("/notificationHub");
             });
+
+            autoMapper.ConfigurationProvider.AssertConfigurationIsValid();
         }
     }
 }
