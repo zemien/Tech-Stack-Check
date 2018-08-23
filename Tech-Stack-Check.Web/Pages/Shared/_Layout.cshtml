@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" integrity="sha256-HtCCUh9Hkh//8U1OwcbD8epVEUdBvuI8wj1KtqMhNkI=" crossorigin="anonymous" />
+    <environment include="Staging,Development">
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Staging,Development">
+        <link rel="stylesheet" href="~/css/site.min.css" />
+    </environment>
+    <title>Tech-Stack-Check</title>
+</head>
+<body>
+    @RenderBody()
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/atomic@4.2.1/dist/atomic.polyfills.min.js" integrity="sha256-Q9EVtPX6+SqfIJCm9TpBQG8xSEPq0acD574sTM8J5b8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@aspnet/signalr@1.0.2/dist/browser/signalr.min.js" integrity="sha256-uS7/WaRZCQddqNZ9xEJwYAGAmhO3zGCOP2F0jMP8G/c=" crossorigin="anonymous"></script>
+    <environment include="Staging,Development">
+        <script src="~/js/animate.js"></script>
+        <script src="~/js/placeholders.js"></script>
+        <script src="~/js/fittext.js"></script>
+    </environment>
+    <environment exclude="Staging,Development">
+        <script src="~/js/common.min.js"></script>
+    </environment>
+    @RenderSection("Scripts")
+</body>
+</html>

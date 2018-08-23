@@ -6,11 +6,17 @@
     ]
   },
   {
-    "outputFileName": "wwwroot/js/app.min.js",
+    "outputFileName": "wwwroot/js/common.min.js",
     "inputFiles": [
       "wwwroot/js/animate.js",
       "wwwroot/js/placeholders.js",
-      "wwwroot/js/fittext.js",
+      "wwwroot/js/fittext.js"
+    ],
+    "sourceMap": true
+  },
+  {
+    "outputFileName": "wwwroot/js/app.min.js",
+    "inputFiles": [
       "wwwroot/js/app.model.js",
       "wwwroot/js/app.viewmodel.js"
     ],
